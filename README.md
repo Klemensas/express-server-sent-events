@@ -1,4 +1,4 @@
-server-sent-events
+express-server-sent-events
 ========
 
 Express middleware to push events/messages from the server to the browser, using EventSource.
@@ -17,7 +17,7 @@ Removed IE padding (let's move on)
 Installation
 --------
 
-    $ npm install -g server-sent-events
+    $ npm install express-server-sent-events --save
 
 
 Usage (with express)
@@ -25,7 +25,7 @@ Usage (with express)
 
 ```javascript
 // require sse
-var sse = require('server-sent-events');
+var sse = require('express-server-sent-events');
 var express = require('express');
 
 var app = express();

@@ -7,6 +7,13 @@ This middleware will keep the request stream open indefinitely, pad the initial 
 
 Detailed information on how to setup the browser/client can be found [here][1].
 
+Difference from [original][2]
+-------
+
+**Use flush instead of flushHeaders**
+
+Removed IE padding (let's move on)
+
 Installation
 --------
 
@@ -24,9 +31,10 @@ var express = require('express');
 var app = express();
 
 app.get('/events', sse, function(req, res) {
-	// res.sse is made available via the middleware
-	res.sse('data: im from the server\n\n');
+  // res.sse is made available via the middleware
+  res.sse('data: im from the server\n\n');
 });
 ```
 
   [1]: https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events
+  [2]: https://github.com/zacbarton/node-server-sent-events

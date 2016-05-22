@@ -23,7 +23,7 @@ function sse(req, res, next) {
   }, 20000);
 
   // cleanup on close
-  res.on('close', function close() {
+  res.on('close', function() {
     clearInterval(keepAlive);
   });
 

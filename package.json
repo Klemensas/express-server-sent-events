@@ -1,13 +1,15 @@
 {
   "name": "express-server-sent-events",
   "description": "Express middleware to push events/messages from the server to the browser, using EventSource.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Zac Barton"
   },
-  "contributors": [{
-    "name": "Klemensas"
-  }],
+  "contributors": [
+    {
+      "name": "Klemensas"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,5 +22,6 @@
     "sse",
     "server-sent",
     "events"
-  ]
+  ],
+  "dependencies": {}
 }

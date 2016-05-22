@@ -12,15 +12,10 @@ function sse(req, res, next) {
     res.write(string);
 
     // support running within the compression middleware
-    if (res.flushHeaders && string.match(/\n\n$/)) {
-      res.flushHeaders();
+    if (res.flush && string.match(/\n\n$/)) {
+      res.flush();
     }
   };
-
-  // write 2kB of padding (for IE) and a reconnection timeout
-  // then use res.sse to send to the client
-  res.write(':' + Array(2049).join(' ') + '\n');
-  res.sse('retry: 2000\n\n');
 
   // keep the connection open by sending a comment
   var keepAlive = setInterval(function() {
